@@ -1,0 +1,225 @@
+.card {
+  margin-top: var(--before-brcrumbs);
+}
+
+.texts_grid {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 15px;
+  margin-top: 10px;
+}
+
+.review {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 15px;
+}
+
+.review_item {
+  display: flex;
+  align-items: center;
+}
+
+.review_item_text {
+  margin-left: 15px;
+}
+
+.review__number {
+  margin: 0;
+  font-size: 14px;
+  line-height: 10px;
+  font-weight: 900;
+}
+
+.review span {
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.card_text {
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.country_text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.stars_wrapper {
+  display: inline;
+  margin-right: 10px;
+}
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 16px;
+  height: 17px;
+  margin: 3px 0;
+}
+
+.hotel_name {
+  display: inline;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 700;
+}
+
+.tour_propertys {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 4px;
+  margin-top: 20px;
+}
+
+.tour_inside_propertys {
+  margin-bottom: 20px;
+}
+
+.tour_inside_propertys .tour_property__title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.tour_property {
+  margin: 0 10px;
+}
+
+.tour_property {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+  align-items: center;
+}
+
+.tour_property__title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.tour_property__title::first-letter {
+  text-transform: capitalize;
+}
+
+.maps_and_options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.maps {
+  display: flex;
+  align-items: center;
+  min-width: 98px;
+  margin: 5px 10px 5px 0;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.maps span {
+  margin-left: 4px;
+  text-decoration: underline;
+}
+
+.options {
+  /* min-width: 220px; */
+  margin: 5px 0;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: var(--def-radius);
+  background-color: var(--white);
+}
+
+.card_order {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding: 15px 10px 15px 20px;
+  border-radius: var(--def-radius);
+  background-color: var(--white);
+}
+
+.order_text_wrapper {
+  display: grid;
+  flex-shrink: 0;
+}
+
+.order_text_wrapper__fluid {
+  display: block;
+  flex-shrink: 1;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.order_text_wrapper__fluid span {
+  display: block;
+}
+
+.order_text__duration,
+.order_text__people {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.order_text__duration > span,
+.order_text__people > span {
+  color: var(--primary-light);
+}
+
+.order_price {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+}
+
+.order_price > span {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.hotel_descr_wrapper {
+  margin-top: 35px;
+}
+
+.hotel_descr_title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.hotel_descr_wrapper p {
+  margin-top: 5px;
+  margin-bottom: 0;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.read_or_hide {
+  font-weight: 700;
+}
+
+@media (max-width: 999px) {
+  .card_img {
+    height: 300px;
+  }
+}

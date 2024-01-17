@@ -1,0 +1,35 @@
+.login,
+.logout {
+  display: inline-block;
+  max-width: 320px;
+  margin-top: 15px;
+  text-align: center;
+  border-radius: var(--def-radius);
+}
+
+.logout {
+  margin-top: 0;
+  text-decoration: underline;
+}
+
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.credentials > * {
+  margin-bottom: 15px;
+}
+
+.credentials img {
+  width: 26px;
+  height: 26px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-right: 15px;
+}

@@ -1,0 +1,10 @@
+{
+  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "prefer-const": "warn",
+    "no-console": "warn",
+    "react-hooks/exhaustive-deps": "off",
+    "@next/next/no-img-element": "off"
+  }
+}

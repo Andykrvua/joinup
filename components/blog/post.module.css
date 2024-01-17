@@ -1,0 +1,258 @@
+.post {
+  margin-top: var(--before-brcrumbs);
+}
+
+.post.countryPage {
+  margin-top: var(--block-title-top-margin);
+}
+
+.header {
+  position: relative;
+  height: 320px;
+  border-radius: var(--def-radius);
+  box-shadow: var(--cards-shadow);
+  overflow: hidden;
+}
+
+.header:hover img {
+  transform: scale(1.1);
+}
+
+.img {
+  transition: transform var(--base-transition);
+}
+
+.img_wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--def-radius);
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+
+.img_wrapper.countryPage::after {
+  content: none;
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 5px 7px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--font-white);
+  background: var(--orange-red-badge);
+}
+
+.card_text {
+  position: absolute;
+  display: inline-block;
+  bottom: 20px;
+  left: 20px;
+  padding: 13px 18px 10px;
+  border-radius: var(--def-radius);
+  background-color: var(--green-badge);
+}
+
+.card_text h3 {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--bg);
+}
+
+.card_text span {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--line);
+}
+
+.category,
+.date,
+.title {
+  position: absolute;
+  z-index: 1;
+  --offset: 20px;
+}
+
+.category,
+.date {
+  padding: 5px 7px;
+  border-radius: var(--def-radius);
+  font-size: 12px;
+}
+
+.category {
+  top: var(--offset);
+  left: var(--offset);
+  color: var(--bg);
+  background-color: rgba(85, 181, 74, 0.8);
+}
+
+.date {
+  top: var(--offset);
+  right: var(--offset);
+  background-color: rgba(229, 229, 235, 0.75);
+}
+
+.title {
+  right: var(--offset);
+  bottom: var(--offset);
+  left: var(--offset);
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 700;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  color: var(--font-white);
+}
+
+.countrypage_title {
+  display: none;
+}
+
+.content {
+  margin-top: var(--before-brcrumbs);
+}
+
+.content p,
+.content li {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 10px 0 0;
+}
+
+.content a {
+  color: var(--blue);
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+}
+
+.content h2,
+.content h3 {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+.content ul {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.content img {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: var(--def-radius);
+  max-width: 100%;
+  height: auto;
+}
+
+.content table {
+  display: block;
+  width: 100% !important;
+  border: none;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.content blockquote {
+  position: relative;
+  margin: 0 0 0 45px;
+}
+
+.content blockquote::before {
+  content: url('/assets/img/svg/blockquote.svg');
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 500px) {
+  .header {
+    margin: 0 var(--helper-margin);
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .header {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    column-gap: 50px;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .img_wrapper,
+  .header_text {
+    position: relative;
+  }
+
+  .img_wrapper {
+    border-radius: var(--def-radius);
+    box-shadow: var(--cards-shadow);
+    overflow: hidden;
+  }
+
+  .header_text {
+    display: grid;
+    align-self: center;
+  }
+
+  .header_text_wrapper > * {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--primary);
+    text-shadow: none;
+  }
+
+  .category,
+  .date {
+    margin-top: 15px;
+    display: inline-block;
+  }
+
+  .date {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 899px) {
+  .title.countryPage {
+    display: none;
+  }
+
+  .countrypage_title {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 700;
+  }
+}

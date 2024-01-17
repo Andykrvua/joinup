@@ -1,0 +1,36 @@
+{
+  "name": "anex",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.3",
+    "next": "12.1.0",
+    "next-auth": "^4.10.3",
+    "nodemailer": "^6.9.1",
+    "promise": "^8.3.0",
+    "react": "17.0.2",
+    "react-datepicker": "^4.7.0",
+    "react-dom": "17.0.2",
+    "react-gtm-module": "^2.0.11",
+    "react-intl": "^5.25.1",
+    "react-leaflet": "^3.2.5",
+    "react-range": "^1.8.14",
+    "react-sticky-box": "^1.0.2",
+    "react-touch-carousel": "^0.10.2",
+    "sharp": "^0.30.4",
+    "simplebar-react": "^2.3.6",
+    "tua-body-scroll-lock": "^1.2.1",
+    "yet-another-react-lightbox": "^2.1.1",
+    "zustand": "^3.7.1"
+  },
+  "devDependencies": {
+    "eslint": "8.11.0",
+    "eslint-config-next": "12.1.0"
+  }
+}

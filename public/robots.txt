@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /*?f=img*
+
+Sitemap: https://anex-tour.com.ua/sitemap.xml

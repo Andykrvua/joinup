@@ -1,0 +1,17 @@
+export const links = {
+  faq: '/faq',
+  main: '/',
+  tours: '/tours',
+  countries: '/countries',
+  hotTours: '/hot-tours',
+  hotels: '/hotels',
+  blog: '/blog',
+  blog_category: '/blog/category',
+  blog_country: '/blog/country',
+  reviews: '/reviews',
+  certificates: '/podarochnye-sertifikaty',
+  contacts: '/contacts',
+  privacy_policy: '/about-us/privacy-policy',
+  telegram: 'https://t.me/ua_anextour',
+  viber: 'viber://chat?number=0635914144',
+};

@@ -1,0 +1,53 @@
+.popup_scrollable_content {
+  margin: 0;
+  padding: 0;
+}
+
+.popup_scrollable_content.center {
+  justify-content: center;
+}
+
+.input_label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input_label input {
+  position: absolute;
+  opacity: 0;
+}
+
+.input_label_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 20px;
+  transition: background-color var(--base-transition);
+  cursor: pointer;
+}
+
+.input_label_text {
+  display: block;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.input_label_icons {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
+
+.input_label_icons img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input:checked + span {
+  font-weight: bold;
+  color: var(--font-white);
+  background-color: var(--secondary);
+}

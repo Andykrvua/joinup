@@ -1,0 +1,11 @@
+.down_input_wrapper {
+  margin: 10px var(--cont-padding-popup) 30px;
+}
+
+.down_content_title {
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  color: var(--primary-light);
+}

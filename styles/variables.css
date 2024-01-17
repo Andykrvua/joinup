@@ -1,0 +1,138 @@
+:root {
+  --page-m-width: 1110px; /* макс ширина страницы */
+  --cont-padding: 0 20px; /* отступ у контейнера */
+  --helper-margin: -20px; /* отступ при растягивании контейнер на всю ширину */
+  --cont-padding-popup: 20px; /* отступ у контейнера всплывающего окна */
+  --h1margin: 20px; /* отступ у h1 страниц стран и дистриктов */
+  --header-height: 81px; /* высота шапки */
+  --header-compensation: 0; /* компенсация высоты шапки */ /* компенсация высоты шапки */
+  --form-btn-icon-width: 58px; /* ширина блока иконки в форме */
+  --form-btn-height: 58px; /* высота кнопки в форме */
+  --mainform-desktop-maxheight: 610px; /* максимальная высота попапа формы на десктопе */
+  --block-title-top-margin: 33px; /* отступ сверху блока от тайтла */
+  --block-top: 25px; /* отступ сверху от блока */
+  --title-bottom: 18px; /* отступ снизу от тайтла */
+  --before-brcrumbs: 20px; /* отступ сверху до крошек */
+  --block-top-margin: 15px; /* отступ сверху блока до тайтла */
+  --primary: #53536e; /* основной цвет */
+  --secondary: #ff9400; /* вторичный цвет */
+  --menu-hover: var(--secondary); /* цвет ссылок при наведении */
+  --secondary-disabled: #ffd499; /* вторичный у отключенных кнопок */
+  --bg: #f6f6f8; /* основной фон */
+  --line: #e5e5eb; /* светло-серая линия (пример, линия под шапкой) */
+  --white: #fff; /* белый */
+  --white-09: rgba(255, 255, 255, 0.9); /* белый прозрачность 0,9 */
+  --font-white: #f8f9fa; /* белый цвет шрифта */
+  --popup-bg: var(--bg); /* фон попапа главной формы */
+  --placeholder: #c3c3d0; /* цвет плейсхолдера */
+  --primary-light: #8989a2; /* основной светлый */
+  --primary-soft-light: #8f9aac; /* основной очень светлый */
+  --footer-bg: #292933; /* фон подвала */
+  --blue: #0080ff; /* голубой, ссылки */
+  --green: #55b54a; /* зеленый */
+  --primary-03: rgba(83, 83, 110, 0.3); /* основной opacity 0.3 */
+  --green-badge: rgba(85, 181, 74, 0.8); /* зеленый бейдж country text */
+  --orange-badge: rgba(255, 148, 0, 0.8); /* оранжевый бейдж country text */
+  --blue-badge: linear-gradient(
+    95.77deg,
+    rgba(0, 107, 214, 0.8) -24%,
+    rgba(0, 128, 255, 0.8) 146%
+  ); /* голубой бейд жcountry text */
+  --orange-red-badge: linear-gradient(
+    99.9deg,
+    rgba(255, 148, 0, 0.8) 17.57%,
+    rgba(255, 24, 33, 0.8) 112.75%
+  ); /* оранжево-красный бейдж country badge */
+  --scroll-red: linear-gradient(
+    99.91deg,
+    var(--secondary) 17.57%,
+    #ff1821 112.75%
+  ); /* скролбар красный градиент */
+  --green-linear: linear-gradient(
+    135deg,
+    #55b54a 0%,
+    #44cc35 100%
+  ); /* градиент для кнопки подтверждения */
+  --scroll-default: rgba(0, 0, 0, 0.3); /* скролбар по -умолчанию */
+
+  --btn-focus: 0 0 0 5px rgb(195 195 208/50%); /* оутлайн кнопок и ссылок */
+  --formfield-shadow: 0px 8px 16px rgba(229, 229, 235, 0.58); /* тень кнопок формы */
+
+  --red-btn: linear-gradient(
+    99.91deg,
+    var(--secondary) 17.57%,
+    #ff1821 112.75%
+  ); /* главная кнопка формы */
+  --red-btn-shadow: 0px 8px 16px rgba(255, 89, 16, 0.38); /* тень главной кнопки формы */
+  --base-btn-shadow: 0px 8px 16px rgba(83, 83, 110, 0.38); /* тень главной кнопки формы */
+  --arrow-btn-shadow: 0px 2px 4px rgba(229, 229, 235, 0.58); /* тень arrow кнопок */
+  --arrow-btn-shadow-up: 0px -2px 4px rgba(229, 229, 235, 0.58); /* тень arrow кнопок вверх */
+  --cards-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* тень карточек */
+
+  --base-transition: 0.3s cubic-bezier(0.3, 0.9, 0.3, 1); /* базовый переход */
+  --back-transition: 0.3s cubic-bezier(0.9, -0.35, 0.57, 1.35); /* switch переход */
+  --letter: -0.02em; /* межбуквенный интервал для заголовков меню */
+  --svg-btn-padding: 0; /* отступ у кнопок с svg иконками */
+  --def-radius: 4px; /* радиус по умолчанию */
+
+  --switch-menu-label-z: 1; /* z-index подписи к switch меню */
+  --header-wrapper-z: 5; /* z-index шапки */
+  --main-form-popup-z: 10; /* z-index главной формы */
+  --submenu-desktop-z: 11; /* z-index сабменю навигации */
+  --submenu-tablet-z: 9; /* z-index сабменю навигации */
+  --burger-z: 15; /* z-index бокового меню */
+  --modal-z: 99; /* z-index модального окна */
+  --info-modal-z: 100; /* z-index исчезающего модального окна */
+
+  --title-fz: 20px;
+  --title-lh: 23px;
+  --title-fw: 400;
+  --title-ls: var(--letter);
+  --title-tt: uppercase;
+}
+
+/* size tablet or bigger */
+@media (min-width: 768px) {
+  :root {
+    --cont-padding: 0 30px; /* отступ у контейнера */
+    --helper-margin: -30px; /* отступ при растягивании контейнер на всю ширину */
+  }
+}
+
+@media (min-width: 810px) {
+  :root {
+    --block-title-top-margin: 40px; /* отступ сверху блока от тайтла */
+    --block-top: 40px; /* отступ сверху от блока */
+    --block-top-margin: 20px; /* отступ сверху блока до тайтла */
+    --title-bottom: 25px; /* отступ снизу от тайтла */
+    --h1margin: 40px; /* отступ у h1 страниц стран и дистриктов */
+
+    --popup-bg: var(--white); /* фон попапа главной формы */
+
+    --svg-btn-padding: 5px; /* отступ у кнопок с svg иконками */
+
+    --header-wrapper-z: 10; /* z-index шапки */
+    --main-form-popup-z: 5; /* z-index шапки */
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --header-compensation: calc(
+      var(--header-height) + 25px
+    ); /* компенсация высоты шапки */
+    --before-brcrumbs: 40px; /* отступ сверху до крошек */
+  }
+}
+
+/* desktop */
+@media (min-width: 1110px) {
+  :root {
+    --form-btn-icon-width: 50px; /* ширина блока иконки в форме */
+    --form-btn-height: 75px; /* высота кнопки в форме */
+  }
+}
+
+/* max mobile size */
+@media (max-width: 767px) {
+}

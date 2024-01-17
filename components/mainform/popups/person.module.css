@@ -1,0 +1,69 @@
+.popup_scrollable_content {
+  justify-content: center;
+  text-align: center;
+}
+
+.night_input_wrapper {
+  position: relative;
+  margin: 0 30px;
+  text-align: center;
+}
+
+.night_input_wrapper + .night_input_wrapper {
+  margin-top: 30px;
+}
+
+.night_input[type='text'] {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.plus_minus_btn {
+  position: absolute;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background-color: transparent;
+}
+
+.plus_minus_btn:disabled svg,
+.plus_minus_btn[disabled] svg {
+  stroke: var(--secondary-disabled);
+}
+
+.plus_minus_btn svg {
+  stroke: var(--secondary);
+}
+
+.minus_btn {
+  left: 10px;
+}
+
+.plus_btn {
+  right: 10px;
+}
+
+.age_label {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.night_input_age_wrapper + .night_input_age_wrapper {
+  margin-top: 10px;
+}
+
+.info_btn {
+  position: relative;
+  padding-right: 22px;
+  padding-left: 2px; /* ios visible fix */
+  background-color: transparent;
+}
+
+.info_btn svg {
+  position: absolute;
+  top: -3px;
+  right: 0;
+  fill: var(--primary);
+}

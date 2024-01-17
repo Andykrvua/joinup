@@ -1,0 +1,24 @@
+.search_wrapper {
+  margin-top: 25px;
+}
+
+.filter_btn {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@media (min-width: 810px) {
+  .search_wrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    column-gap: 50px;
+    margin-top: 30px;
+  }
+
+  .filter_content_wrapper {
+    position: relative;
+  }
+}

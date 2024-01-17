@@ -1,0 +1,31 @@
+.blog_wrapper {
+  margin-top: var(--block-title-top-margin);
+}
+
+.blog_header {
+  margin-bottom: var(--block-top-margin);
+}
+
+.title {
+  display: inline-block;
+}
+
+.blog_link {
+  position: relative;
+  bottom: 1px;
+  margin-left: 25px;
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .blog_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 290px;
+  }
+
+  .blog_link {
+    bottom: -1px;
+  }
+}
