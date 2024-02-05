@@ -5,6 +5,7 @@ import CountryList from 'components/countryList';
 import { countryListVariants } from 'utils/constants';
 import SimpleBar from 'simplebar-react';
 import { lock, unlock } from 'tua-body-scroll-lock';
+import { useIntl } from 'react-intl';
 
 function useOutsideClick(ref, setIsOpen, isOpen, el) {
   useEffect(() => {
@@ -33,17 +34,13 @@ function useOutsideClick(ref, setIsOpen, isOpen, el) {
   }, [isOpen]);
 }
 
-export default function SubnavCountry({
-  offsetLeft,
-  isOpen,
-  setIsOpen,
-  navData,
-  windowSize,
-}) {
+export default function SubnavCountry({ offsetLeft, isOpen, setIsOpen, navData, windowSize }) {
   const [offset, setOffest] = useState(null);
   const [transition, setTransition] = useState('scaleY(0)');
   const [width, setWidth] = useState(null);
+  const [search, setSearch] = useState('');
   const elRef = useRef();
+  const intl = useIntl();
 
   const scrollableRef = useRef(null);
 
@@ -100,41 +97,38 @@ export default function SubnavCountry({
           : `${styles.subnavcountry_wrapper} subnavcountry_wrapper`
       }
       style={{
-        left: `${offset ? offset : 30}px`,
-        top: offset ? '80px' : 'calc(100% - 25px)',
+        // left: `${offset ? offset : 30}px`,
+        // top: offset ? '81px' : 'calc(100% - 25px)',
         transform: `${transition}`,
         display: `${isOpen ? 'block' : 'none'}`,
       }}
     >
       <div className={styles.subnavcountry}>
         <header className={styles.subnavcountry_header}>
-          <button
-            className="svg_btn svg_btn_stroke"
-            aria-label="Закрыть"
-            onClick={() => setIsOpen(false)}
-          >
+          <div className={styles.search_wrapper}>
+            <input
+              type="text"
+              placeholder={intl.formatMessage({ id: 'common.country.search' })}
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
+            />
+          </div>
+          <button className="svg_btn svg_btn_stroke" aria-label="Закрыть" onClick={() => setIsOpen(false)}>
             <CloseSvg />
           </button>
         </header>
         <div className={styles.subnavcountry_content} ref={scrollableRef}>
           {width >= 810 ? (
             <SimpleBar
-              style={{ maxHeight: '610px', padding: '20px' }}
+              // style={{ maxHeight: '610px', padding: '20px' }}
+              style={{ maxHeight: '75vh', padding: '20px' }}
               autoHide={true}
               className="mobile_default"
             >
-              <CountryList
-                variant={countryListVariants.getNavMenu}
-                data={navData}
-                setIsOpen={setIsOpen}
-              />
+              <CountryList variant={countryListVariants.getNavMenu} data={navData} setIsOpen={setIsOpen} />
             </SimpleBar>
           ) : (
-            <CountryList
-              variant={countryListVariants.getNavMenu}
-              data={navData}
-              setIsOpen={setIsOpen}
-            />
+            <CountryList variant={countryListVariants.getNavMenu} data={navData} setIsOpen={setIsOpen} />
           )}
         </div>
       </div>

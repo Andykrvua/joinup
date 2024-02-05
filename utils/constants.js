@@ -40,10 +40,6 @@ export const location = {
   districtList: {
     allToursPage: 'allToursPage',
   },
-  nav: {
-    desktop: 'desktop',
-    mobile: 'mobile',
-  },
 };
 
 // switch menu margin
@@ -113,7 +109,6 @@ export const reviewsPerPage = 10;
 export const modal = {
   leadGetTours: 'leadGetTours',
   leadRequestCall: 'leadRequestCall',
-  favorites: 'favorites',
   hotelCardsMap: 'hotelCardsMap',
   offerPageChangePerson: 'offerPageChangePerson',
   offerPageChangeNight: 'offerPageChangeNight',

@@ -1,0 +1,20 @@
+.lang_switcher {
+  display: flex;
+  align-items: center;
+}
+
+.lang_switcher svg {
+  margin-right: 5px;
+}
+
+.lang_switcher button {
+  margin: 0 5px;
+  font-weight: inherit;
+  color: var(--secondary60);
+  background-color: transparent;
+}
+
+button.active {
+  text-decoration: underline;
+  color: var(--white);
+}

@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @import url('./variables.css');
 @import url('./normalize.css');
 @import url('./simplebar.css');
 /* @import 'react-datepicker/dist/react-datepicker.css'; */
+
+/*
+100
+200
+300
+!use 400
+500
+!use 600
+700
+800
+!use 900
+*/
 
 /* Utils start */
 html {
@@ -18,11 +32,10 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji';
-  font-size: 15px;
-  line-height: 18px;
-  color: var(--primary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--txt-black);
   background-color: var(--bg);
 }
 body.iosfix {
@@ -54,16 +67,19 @@ button {
 
 .svg_btn {
   display: flex;
+  align-items: center;
   padding: var(--svg-btn-padding);
   background-color: transparent;
 }
 
 .svg_btn svg {
-  fill: var(--primary);
+  /* fill: var(--primary); */
+  fill: var(--icon-grey);
 }
 
 .svg_btn_stroke svg {
-  stroke: var(--primary);
+  /* stroke: var(--primary); */
+  stroke: var(--icon-grey);
 }
 
 .no-select {
@@ -118,21 +134,21 @@ a {
 input[type='text'],
 textarea {
   width: 100%;
-  height: 60px; /* firefox line-height fix */
+  height: 40px; /* firefox line-height fix */
   margin: 0;
-  padding: 20px;
+  padding: 14px 20px;
   border-radius: var(--def-radius);
   border: 1px solid var(--line);
   font-family: inherit;
-  font-size: 16px;
-  line-height: 18px;
-  color: var(--primary);
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--txt-black);
   /* -webkit-text-fill-color: var(--primary); ios disabled-input fix */
   background-color: var(--white);
   background-image: linear-gradient(transparent, transparent); /* ios top shadow fix */
   opacity: 1; /* ios disabled-input fix */
-  box-shadow: var(--formfield-shadow);
   outline: none;
+  transition: border-color var(--base-transition);
 }
 
 textarea {
@@ -143,6 +159,11 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   color: var(--placeholder);
+}
+
+input[type='text']:focus,
+textarea:focus {
+  border-color: var(--orange);
 }
 
 .tolower {
@@ -222,37 +243,49 @@ textarea::placeholder {
 /* Layout end */
 
 /* Header start */
-.header_wrapper {
+header.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--secondary30);
+  background-color: transparent;
+  z-index: var(--header-wrapper-z);
+}
+/* .header_wrapper {
   position: fixed;
   width: 100%;
   height: var(--header-height);
   border-bottom: 1px solid var(--line);
   background-color: var(--bg);
   z-index: var(--header-wrapper-z);
-}
+} */
 
 header.header .header_container {
   display: grid;
   grid-template-columns: min-content 1fr max-content;
   height: inherit;
   align-items: center;
+  font-weight: 600;
 }
 
-.header_nav_container.mobile {
+/* .header_nav_container.mobile {
   margin-top: calc(var(--header-height) + 25px);
   margin-bottom: 25px;
 }
 
 .header_nav_container.desktop {
   display: none;
-}
+} */
 
 .logo {
   justify-self: center;
+  margin: 20px 0;
 }
 
 .user_area {
   display: flex;
+  column-gap: 40px;
+  margin-left: auto;
 }
 
 @media (min-width: 900px) {
@@ -262,20 +295,21 @@ header.header .header_container {
     height: inherit;
   }
 
-  .header_nav_container.desktop {
+  /* .header_nav_container.desktop {
     display: block;
-  }
+  } */
 
   .header_nav_container {
-    display: block;
-    margin: 0;
-    position: static;
-    width: auto;
+    /* display: block; */
+    margin: 0 auto 0 60px;
+    padding-right: 40px;
+    /* position: static;
+    width: auto; */
   }
 
-  .header_nav_container.mobile {
+  /* .header_nav_container.mobile {
     display: none;
-  }
+  } */
 }
 
 .logo_link {
@@ -284,35 +318,52 @@ header.header .header_container {
 
 .header_nav {
   display: grid;
-  grid-template-columns: repeat(5, max-content);
+  grid-template-columns: repeat(6, max-content);
   align-items: center;
 }
 
 .header_nav_link {
   display: inline-block;
   padding: 5px;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: var(--letter);
-  text-transform: uppercase;
+  color: var(--white);
   background-color: transparent;
   transition: color var(--base-transition);
+}
+
+button.header_nav_link {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  font-weight: inherit;
 }
 
 .header_nav_link:active {
   box-shadow: none;
 }
 
-.header_nav_link:hover {
+/* .header_nav_link:hover {
   color: var(--menu-hover);
-}
+} */
 
 .header_nav li + li {
-  margin-left: 5px;
+  margin-left: 30px;
 }
 
-.user_area button + button {
+/* .user_area button + button {
   margin-left: 5px;
+} */
+
+.burger_menu {
+  display: none;
+}
+
+@media (max-width: 1110px) {
+  .header_nav_container {
+    display: none;
+  }
+  .burger_menu {
+    display: block;
+  }
 }
 /* Header end */
 /* Burger logo start */
@@ -352,10 +403,21 @@ header.header .header_container {
 .main_form {
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .main_formfield_wrapper {
   position: relative;
+  padding: 0 10px;
+  border-right: 1px solid var(--line);
+}
+
+.main_formfield_wrapper:first-child {
+  /* margin-left: 10px; */
+}
+
+.main_formfield_wrapper.wrapper_btn_person {
+  border: 0;
 }
 
 .main_formfield_wrapper + .main_formfield_wrapper {
@@ -364,6 +426,8 @@ header.header .header_container {
 
 .main_formfield {
   width: 100%;
+  padding: 0 10px;
+  /* margin: 0 10px; */
   border: 1px solid var(--line);
   border-radius: var(--def-radius);
   background-color: var(--white);
@@ -373,9 +437,16 @@ header.header .header_container {
 /* ios grid fix */
 .main_formfield .main_formfield_inner {
   display: grid;
-  grid-template-columns: var(--form-btn-icon-width) 1fr;
-  height: var(--form-btn-height);
+  grid-template-columns: 1fr max-content;
   align-items: center;
+}
+
+.formfield_btn_name {
+  grid-column: 2 span;
+  padding-top: 20px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--txt-gray);
 }
 
 .main_formfield:active,
@@ -386,9 +457,7 @@ header.header .header_container {
 .formfield_btn_icon {
   display: grid;
   place-items: center;
-  width: var(--form-btn-icon-width);
-  height: 100%;
-  border-right: 1px solid var(--line);
+  /* border-right: 1px solid var(--line); */
 }
 
 .formfield_btn_icon svg {
@@ -398,29 +467,14 @@ header.header .header_container {
 .formfield_btn_title {
   justify-self: self-start;
   max-width: 100%;
-  padding: 0 20px;
-  line-height: 18px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
   color: var(--primary);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-
-.second_btn_date {
-  position: absolute;
-  display: grid;
-  top: 0;
-  right: 0;
-  height: 100%;
-  padding: 10px;
-  pointer-events: none;
-}
-
-.second_btn_date__text {
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: var(--def-radius);
-  background-color: var(--bg);
 }
 
 .main_form_btn,
@@ -455,10 +509,6 @@ header.header .header_container {
 .apply_btn:not([disabled]):active,
 .apply_btn:not([disabled]):focus-visible {
   box-shadow: var(--base-btn-shadow), var(--btn-focus);
-}
-
-.formfield_btn_title_plusdays {
-  display: none;
 }
 
 /* Size tablet or bigger start */
@@ -499,8 +549,9 @@ header.header .header_container {
   .main_form {
     flex-direction: row;
     flex-wrap: nowrap;
+    padding: 8px 0;
     border: 1px solid var(--line);
-    border-radius: var(--def-radius);
+    border-radius: 15px;
     background-color: var(--white);
   }
 
@@ -513,7 +564,7 @@ header.header .header_container {
   }
 
   .main_formfield_wrapper {
-    margin-left: 5px;
+    /* margin-left: 5px; */
   }
 
   .main_formfield_wrapper:nth-child(odd) {
@@ -531,26 +582,13 @@ header.header .header_container {
     box-shadow: none;
   }
 
-  .btn_date {
-    width: 220px;
-  }
-
-  .second_btn_date {
-    padding: 17px 10px;
-  }
-
-  .second_btn_date__text {
-    display: flex;
-    align-items: center;
-  }
-
   .formfield_btn_icon {
-    border-left: 1px solid var(--line);
-    border-right: none;
+    /* border-left: 1px solid var(--line);
+    border-right: none; */
   }
 
   .main_formfield_wrapper:first-child .formfield_btn_icon {
-    border-left: none;
+    /* border-left: none; */
   }
 
   .formfield_btn_title {
@@ -610,17 +648,8 @@ header.header .header_container {
     padding: 0 12px;
   }
 
-  .main_form.search_page .second_btn_date {
-    display: none;
-  }
-
   .main_form.search_page .formfield_btn_title {
     padding: 0;
-  }
-
-  .main_form.search_page .formfield_btn_title_plusdays {
-    display: inline;
-    padding-left: 10px;
   }
 }
 /* Size mobile and search-page end */

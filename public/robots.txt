@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /
 Disallow: /*?f=img*
 
-Sitemap: https://anex-tour.com.ua/sitemap.xml
+Sitemap: https://a-k.name/sitemap.xml

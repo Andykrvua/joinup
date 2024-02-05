@@ -105,7 +105,9 @@ export default function MainForm() {
     >
       <MemoDownField
         title={down?.name[router.locale] || down.name}
-        aria={'Город прибытия'}
+        aria={intl.formatMessage({
+          id: 'mainform.pholder.up',
+        })}
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
         popupName={fieldsNames.down}
@@ -113,28 +115,36 @@ export default function MainForm() {
       <MemoUpField
         title={up?.name[router.locale] || up.name}
         value={up.value}
-        aria={'Город вылета'}
+        aria={intl.formatMessage({
+          id: 'mainform.pholder.down',
+        })}
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
         popupName={fieldsNames.up}
       />
       <MemoDateField
         title={date}
-        aria={'Дата вылета'}
+        aria={intl.formatMessage({
+          id: 'mainform.pholder.date',
+        })}
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
         popupName={fieldsNames.date}
       />
       <MemoNightField
         title={`${night.from} - ${night.to} ночей`}
-        aria={'Количество ночей'}
+        aria={intl.formatMessage({
+          id: 'mainform.pholder.dur',
+        })}
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
         popupName={fieldsNames.night}
       />
       <MemoPersonField
         title={personTitle}
-        aria={'Количество туристов'}
+        aria={intl.formatMessage({
+          id: 'mainform.pholder.touristcount',
+        })}
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
         popupName={fieldsNames.person}

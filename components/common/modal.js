@@ -56,11 +56,6 @@ const OfferPageOrder = dynamic(
   }
 );
 
-const Favorites = dynamic(() => import(/* webpackChunkName: "favorites" */ `./modalChildren/favorites`), {
-  ssr: false,
-  loading: () => <Loader />,
-});
-
 const OfferPageChangeRoom = dynamic(
   () => import(/* webpackChunkName: "offerPageChangeRoom" */ `./modalChildren/offerPageChangeRoom`),
   {
@@ -93,7 +88,6 @@ export default function Modal() {
   const modalTitle = {
     leadGetTours: intl.formatMessage({ id: 'modal.title.leadgettours' }),
     leadRequestCall: intl.formatMessage({ id: 'modal.title.leadrequestcall' }),
-    favorites: intl.formatMessage({ id: 'favorites' }),
   };
 
   useEffect(() => {
@@ -182,7 +176,6 @@ export default function Modal() {
                 <OfferPageChangeRoom closeHandler={closeHandler} />
               )}
               {getModal.get === modal.offerPageOrder && <OfferPageOrder closeHandler={closeHandler} />}
-              {getModal.get === modal.favorites && <Favorites />}
               {getModal.get === modal.hotelimg && <HotelImg />}
             </div>
           </div>

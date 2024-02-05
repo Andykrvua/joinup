@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './burger.module.css';
-import { useSetBurger, useGetBurger, useSetModal } from 'store/store';
+import { useSetBurger, useGetBurger, useSetModal, useSetCountryModal, useGetCountryModal } from 'store/store';
 import { lock, unlock, clearBodyLocks } from 'tua-body-scroll-lock';
 import BurgerHeader from './burgerHeader';
 import Link from 'next/link';
@@ -15,6 +15,8 @@ export default function Burger() {
   const setBurger = useSetBurger();
   const getBurger = useGetBurger();
   const setModal = useSetModal();
+  const setCountryModal = useSetCountryModal();
+  const getCountryModal = useGetCountryModal();
 
   const router = useRouter();
   const { pathname, asPath, query, locale } = router;
@@ -36,10 +38,13 @@ export default function Burger() {
     if (getBurger) {
       router.events.on('routeChangeComplete', () => closeBurgerHandler('changeRoute'));
     }
+    if (getCountryModal) {
+      setBurger(false);
+    }
     return () => {
       router.events.off('routeChangeComplete');
     };
-  }, [router.events, getBurger]);
+  }, [router.events, getBurger, getCountryModal]);
 
   useEffect(() => {
     const BODY = document.querySelector('body');
@@ -108,6 +113,24 @@ export default function Burger() {
         <div className={`${styles.burger_content_wrapper} burger_content_wrapper`}>
           <ul className={styles.burger_nav}>
             <li>
+              <button
+                className="header_nav_link"
+                id="countrylistbutton"
+                aria-haspopup="true"
+                aria-controls="countrylist"
+                expanded="false"
+                onClick={() => setCountryModal(true)}
+              >
+                <FM id="nav.country" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" fill="none">
+                  <path
+                    fill="#fff"
+                    d="M4.5 5a.625.625 0 0 1-.444-.181l-3.75-3.75A.628.628 0 0 1 1.194.18L4.5 3.494 7.806.188a.625.625 0 0 1 .882.88l-3.75 3.75A.625.625 0 0 1 4.5 5Z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
               <Link href={links.main}>
                 <a className={styles.burger_nav_link}>
                   <FM id="main" />
@@ -173,14 +196,14 @@ export default function Burger() {
           </ul>
           <div className={styles.right_column}>
             <div>
-              <SwitchMenu
+              {/* <SwitchMenu
                 items={[
                   { name: 'RU', value: 'ru' },
                   { name: 'UA', value: 'uk' },
                 ]}
                 name={'lang_switcher'}
                 callback={[lang, setLang]}
-              />
+              /> */}
             </div>
             <div>
               <button className={styles.circle_btn} onClick={() => pickTourHandler()}>

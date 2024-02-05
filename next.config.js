@@ -4,8 +4,9 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   i18n: {
-    locales: ['ru', 'uk'],
-    defaultLocale: 'ru',
+    locales: ['uk', 'ru'],
+    defaultLocale: 'uk',
+    localeDetection: false,
   },
   images: {
     domains: ['a-k.name', 'newimg.otpusk.com'],

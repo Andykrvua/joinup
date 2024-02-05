@@ -1,6 +1,7 @@
 import MainForm from '/components/mainform/mainForm.js';
 import PopularCountry from '/components/mainpage/popularCountry.js';
 import Blog from '/components/mainpage/blog.js';
+import PageHeader from '/components/common/pageHeader.js';
 import Faq from '/components/mainpage/faq.js';
 import SeoBlock from '/components/common/pageSeoBlock/seoBlock.js';
 import { getLastPost, getPopularCountry, getPageSettings, getMinOffer } from 'utils/fetch';
@@ -24,12 +25,14 @@ export default function Home({
   return (
     <>
       <SeoHead content={mainPageSettings} />
-      <div className="container">
+      <PageHeader>
         <MainForm />
-        {/* <PopularCountry
+      </PageHeader>
+      {/* <PopularCountry
           data={popularCountry}
           minOffer={minOffer?.data?.countries}
         /> */}
+      <div className="container">
         <Blog data={postsList} />
         {faqData && <Faq data={faqData} length={faqDataLength} />}
         {mainPageSettings.translations && <SeoBlock text={mainPageSettings.translations[0].seo_block} />}

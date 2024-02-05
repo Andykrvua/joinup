@@ -202,14 +202,6 @@
   line-height: 18px;
 }
 
-.favorites_btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: transparent;
-  transition: opacity var(--base-transition);
-}
-
 @media (min-width: 1000px) {
   .cards_wrapper {
     row-gap: 25px;

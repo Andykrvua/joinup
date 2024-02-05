@@ -18,66 +18,27 @@ function App({ Component, pageProps, navData }) {
   const { locale, asPath } = useRouter();
 
   useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-PJT8FLD' });
+    // TagManager.initialize({ gtmId: 'GTM-PJT8FLD' });
   }, []);
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <Head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <link
-          rel="alternate"
-          href={`${process.env.NEXT_PUBLIC_API_HOST}${asPath}`}
-          hrefLang="ru-ua"
-        />
-        <link
-          rel="alternate"
-          href={`${process.env.NEXT_PUBLIC_API_HOST}${asPath}`}
-          hrefLang="ru"
-        />
-        <link
-          rel="alternate"
-          href={`${process.env.NEXT_PUBLIC_API_HOST}/uk${asPath}`}
-          hrefLang="uk-ua"
-        />
-        <link
-          rel="alternate"
-          href={`${process.env.NEXT_PUBLIC_API_HOST}/uk${asPath}`}
-          hrefLang="uk"
-        />
-        <link
-          rel="alternate"
-          href={`${process.env.NEXT_PUBLIC_API_HOST}${asPath}`}
-          hrefLang="x-default"
-        />
+        <link rel="alternate" href={`${process.env.NEXT_PUBLIC_API_HOST}${asPath}`} hrefLang="ru-ua" />
+        <link rel="alternate" href={`${process.env.NEXT_PUBLIC_API_HOST}${asPath}`} hrefLang="ru" />
+        <link rel="alternate" href={`${process.env.NEXT_PUBLIC_API_HOST}/uk${asPath}`} hrefLang="uk-ua" />
+        <link rel="alternate" href={`${process.env.NEXT_PUBLIC_API_HOST}/uk${asPath}`} hrefLang="uk" />
+        <link rel="alternate" href={`${process.env.NEXT_PUBLIC_API_HOST}${asPath}`} hrefLang="x-default" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-        />
-        <meta
-          name="google-site-verification"
-          content="pyXKl8BzwOVBWBhNCUrAZz8kRfbCIY2wT06cObZDFFQ"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="robots" content="noindex, nofollow" />
+        {/* <meta name="google-site-verification" content="pyXKl8BzwOVBWBhNCUrAZz8kRfbCIY2wT06cObZDFFQ" /> */}
       </Head>
       <Layout navData={navData}>
         <Component {...pageProps} />

@@ -75,6 +75,8 @@ const useStore = create(
     },
     modal: false,
     setModal: (modal) => set({ modal }),
+    countryModal: false,
+    setCountryModal: (countryModal) => set({ countryModal }),
     isFilterOpen: false,
     setIsFilterOpen: (isFilterOpen) => set({ isFilterOpen }),
     burger: false,
@@ -164,6 +166,10 @@ export const useGetFieldsNames = () => useStore((state) => state.fieldsNames);
 // open/close modal window
 export const useGetModal = () => useStore((state) => state.modal);
 export const useSetModal = () => useStore((state) => state.setModal);
+
+// open/close country modal
+export const useGetCountryModal = () => useStore((state) => state.countryModal);
+export const useSetCountryModal = () => useStore((state) => state.setCountryModal);
 
 // open/close filter menu
 export const useGetFilterOpen = () => useStore((state) => state.isFilterOpen);
