@@ -1,6 +1,6 @@
 import { useSetModal } from 'store/store';
 import { modal } from 'utils/constants';
-import LangSwitcher from '/components/common/langSwitcher/LangSwitcher.js';
+import LangSwitcher from '/components/common/langSwitcher/langSwitcher.js';
 
 export default function UserArea() {
   const setModal = useSetModal();
