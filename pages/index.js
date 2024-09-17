@@ -4,11 +4,19 @@ import Blog from '/components/mainpage/blog.js';
 import PageHeader from '/components/common/pageHeader.js';
 import Faq from '/components/mainpage/faq.js';
 import SeoBlock from '/components/common/pageSeoBlock/seoBlock.js';
-import { getLastPost, getPopularCountry, getPageSettings, getMinOffer } from 'utils/fetch';
+import {
+  getLastPost,
+  getPopularCountry,
+  getPageSettings,
+  getMinOffer,
+  getPopMonthCountries,
+} from 'utils/fetch';
 import { countryUpdateMinOffer } from 'utils/nextFetch';
 import declension from 'utils/declension';
 import SeoHead from '/components/common/seoHead/seoHead.js';
 import { useEffect } from 'react';
+import TopCountryFromMonth from '/components/mainpage/topCountry.js';
+import EarlierBooking from '/components/mainpage/earlierBooking.js';
 
 export default function Home({
   postsList,
@@ -17,6 +25,7 @@ export default function Home({
   faqData,
   faqDataLength,
   minOffer,
+  allCountry,
 }) {
   useEffect(async () => {
     const result = await countryUpdateMinOffer();
@@ -32,7 +41,9 @@ export default function Home({
           data={popularCountry}
           minOffer={minOffer?.data?.countries}
         /> */}
+      {allCountry && !!allCountry.length && <TopCountryFromMonth data={allCountry} />}
       <div className="container">
+        <EarlierBooking data={allCountry} />
         <Blog data={postsList} />
         {faqData && <Faq data={faqData} length={faqDataLength} />}
         {mainPageSettings.translations && <SeoBlock text={mainPageSettings.translations[0].seo_block} />}
@@ -55,13 +66,15 @@ export async function getStaticProps(context) {
   const faqPageSettings = await getPageSettings('faq_page', loc, dataOtherPage);
 
   const minOffer = await getMinOffer();
+  const allCountry = await getPopMonthCountries(loc);
 
   if (
     postsList.errors ||
     popularCountry.errors ||
     mainPageSettings.errors ||
     faqPageSettings.errors ||
-    minOffer.errors
+    minOffer.errors ||
+    allCountry.errors
   ) {
     // if incorrect request
     /* eslint-disable-next-line */
@@ -74,6 +87,8 @@ export async function getStaticProps(context) {
     console.log('error: ', faqPageSettings?.errors);
     /* eslint-disable-next-line */
     console.log('error: ', minOffer?.errors);
+    /* eslint-disable-next-line */
+    console.log('error: ', allCountry?.errors);
     throw new Error('ERROR MAIN');
   }
 
@@ -107,6 +122,7 @@ export async function getStaticProps(context) {
       faqData: faqData.length > 0 ? faqData : null,
       faqDataLength: faqDataLength || null,
       minOffer: minOffer.data || null,
+      allCountry: allCountry.data,
     },
     revalidate: 30,
   };

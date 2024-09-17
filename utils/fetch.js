@@ -147,9 +147,16 @@ export const getCountrySubpagesSlugs = async (slug) => {
   return req(url);
 };
 
-export const getAllCountriesForNav = async (loc) => {
+export const getAllCountriesForNav = async (loc, getImg = null) => {
   const locale = languagesApi[loc];
-  const url = `api_countries?fields=slug,code,translations.languages_code,translations.name&deep[translations][_filter][languages_code][_eq]=${locale}&filter[status]=published&sort[translations.name]=sort`;
+  const img = getImg ? 'img,' : '';
+  const url = `api_countries?fields=slug,code,${img}translations.languages_code,translations.name&deep[translations][_filter][languages_code][_eq]=${locale}&filter[status]=published&sort[translations.name]=sort`;
+  return req(url);
+};
+
+export const getPopMonthCountries = async (loc) => {
+  const locale = languagesApi[loc];
+  const url = `api_countries?fields=slug,show_popular,img,code,translations.languages_code,translations.name&deep[translations][_filter][languages_code][_eq]=${locale}&filter[show_popular]=true&filter[status]=published&sort[translations.name]=sort`;
   return req(url);
 };
 

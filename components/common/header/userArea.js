@@ -27,7 +27,9 @@ export default function UserArea() {
           />
         </svg>
       </button>
-      <LangSwitcher />
+      <div className="header-lang-switcher">
+        <LangSwitcher />
+      </div>
     </div>
   );
 }

@@ -3,9 +3,10 @@
   --txt-black: #2f3032; /* основной цвет */
   --txt-gray: #a4a8ad;
   --orange: #f44108;
+  --block-mt: 60px;
   --placeholder: var(--txt-gray); /* цвет плейсхолдера */
   --bg: #fff; /* основной фон */
-  --page-m-width: 1300px; /* макс ширина страницы */
+  --page-m-width: 1440px; /* макс ширина страницы */
   --cont-padding: 0 70px; /* отступ у контейнера */
   --secondary30: rgba(255, 255, 255, 0.3);
   --secondary60: rgba(255, 255, 255, 0.6);
@@ -13,6 +14,7 @@
   --header-compensation: 81px;
   --icon-grey: #afb7c1;
   --def-radius: 10px; /* радиус по умолчанию */
+  --mainform-radius: 15px; /* радиус главной формы */
   --line: #ecf0f4;
   --mobile-padding: 15px; /* отступ у окон на весь екран */
   --primary-orange-gr: linear-gradient(106deg, #f46b08 17%, #f44108 103%);
@@ -22,6 +24,9 @@
   --h1-d-fw: 900;
   --subtitle-d-fs: 18px;
   --subtitle-d-lh: 130%;
+  --orange-shadow: 0 4px 20px 0 rgba(244, 65, 8, 0.2);
+  --bg-light: #f8f9fb; /* светлый фон */
+  --formfield-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1); /* тень кнопок формы base figma shadow */
 
   /*_______________________________ old*/
   --cont-padding-popup: 20px; /* отступ у контейнера всплывающего окна */
@@ -68,7 +73,6 @@
   --scroll-default: rgba(0, 0, 0, 0.3); /* скролбар по -умолчанию */
 
   --btn-focus: 0 0 0 5px rgb(195 195 208/50%); /* оутлайн кнопок и ссылок */
-  --formfield-shadow: 0px 8px 16px rgba(229, 229, 235, 0.58); /* тень кнопок формы */
 
   --red-btn: linear-gradient(99.91deg, var(--secondary) 17.57%, #ff1821 112.75%); /* главная кнопка формы */
   --red-btn-shadow: 0px 8px 16px rgba(255, 89, 16, 0.38); /* тень главной кнопки формы */
@@ -103,6 +107,7 @@
   :root {
     /*_______________________________ new*/
     --helper-margin: -70px; /* отступ при растягивании контейнер на всю ширину */
+    --block-mt: 80px;
   }
 }
 

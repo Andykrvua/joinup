@@ -1,0 +1,78 @@
+.earlier_booking {
+  position: relative;
+  display: flex;
+  margin-top: var(--block-mt);
+  background: var(--primary-orange-gr);
+  overflow: hidden;
+}
+
+.line_bg {
+  position: absolute;
+  left: -118px;
+  bottom: 62px;
+  z-index: 0;
+}
+
+.text_content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 570px;
+  padding: 0 40px 0 80px;
+  color: var(--white);
+  z-index: 1;
+}
+
+.title {
+  max-width: 435px;
+}
+
+.descr {
+  margin: 20px 0 30px;
+}
+
+.text_content_btn {
+  display: inline-block;
+  border: 2px solid var(--white);
+  border-radius: var(--def-radius);
+  color: var(--white);
+  width: max-content;
+}
+
+.slide {
+  width: 200px !important;
+}
+
+/* swiper */
+.swiper_container {
+  margin-right: 40px;
+  margin-top: 27px;
+  margin-bottom: 27px;
+}
+
+/* simple card */
+.slide {
+  width: 180px;
+  height: 280px;
+  padding: 10px;
+  box-shadow: var(--formfield-shadow);
+  background-color: var(--white);
+  color: var(--txt-black);
+}
+
+.slide_card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.slide_card h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.img {
+  /* border-radius: 20px; */
+}

@@ -150,7 +150,9 @@ export default function MainForm() {
         popupName={fieldsNames.person}
       />
       <button className="main_form_btn" onClick={() => makeSearchParams()}>
-        <FM id="common.search" />
+        <span>
+          <FM id="common.search" />
+        </span>
       </button>
     </div>
   );
