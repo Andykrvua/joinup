@@ -55,7 +55,7 @@ export default function Home({
 export async function getStaticProps(context) {
   const loc = context.locale;
 
-  const limit = 6;
+  const limit = 3;
   const postsList = await getLastPost(limit, loc);
   const popularCountry = await getPopularCountry(loc);
 

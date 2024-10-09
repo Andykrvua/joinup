@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { shimmer, toBase64 } from 'utils/blurImage';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
-import { links } from 'utils/links';
+import { FormattedMessage as FM } from 'react-intl';
 import 'swiper/css';
 
 const SimpleCard = () => {
@@ -33,12 +33,16 @@ export default function EarlierBooking() {
     <div className={`${styles.earlier_booking} br-20`}>
       <img className={styles.line_bg} src="/assets/img/svg/line-bg.svg" aria-hidden alt="" />
       <div className={styles.text_content}>
-        <h4 className={`${styles.title} desktop-h2 text-balance`}>Бронюйте подорож заздалегідь</h4>
+        <h4 className={`${styles.title} desktop-h2 text-balance`}>
+          <FM id="main.banner1.title" />
+        </h4>
         <p className={`${styles.descr} desktop-subtitle`}>
-          Економте на покупці туру до 50% вартості. Бронюйте зараз!
+          <FM id="main.banner1.descr" />
         </p>
         <Link href="/">
-          <a className={`${styles.text_content_btn} desktop-button`}>Обрати тур</a>
+          <a className={`${styles.text_content_btn} desktop-button`}>
+            <FM id="main.banner1.btn" />
+          </a>
         </Link>
       </div>
       <Swiper className={styles.swiper_container} slidesPerView={'auto'} spaceBetween={20}>

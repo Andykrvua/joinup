@@ -6,6 +6,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 1110px) {
+  .earlier_booking {
+    flex-wrap: wrap;
+  }
+}
+
 .line_bg {
   position: absolute;
   left: -118px;
@@ -21,6 +27,18 @@
   padding: 0 40px 0 80px;
   color: var(--white);
   z-index: 1;
+}
+
+@media (max-width: 1110px) {
+  .text_content {
+    padding: 64px 80px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .text_content {
+    padding: 60px 40px 0;
+  }
 }
 
 .title {
@@ -45,9 +63,24 @@
 
 /* swiper */
 .swiper_container {
-  margin-right: 40px;
   margin-top: 27px;
   margin-bottom: 27px;
+}
+
+@media (max-width: 1110px) {
+  .swiper_container {
+    margin-left: 80px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper_container {
+    margin-left: 40px;
+    margin-top: 28px;
+    margin-bottom: 37px;
+  }
 }
 
 /* simple card */

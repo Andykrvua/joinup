@@ -1,5 +1,10 @@
 {
   "main": "Головна",
+  "main.topcountry.title.part1": "ТОП",
+  "main.topcountry.title.part2": "країн цього місяця",
+  "main.banner1.title": "Бронюйте подорож заздалегідь",
+  "main.banner1.descr": "Економте на покупці туру до 50% вартості. Бронюйте зараз!",
+  "main.banner1.btn": "Обрати тур",
   "main.pop_country": "Популярні напрямки",
   "main.seo.title_a": "Турагенція ",
   "main.seo.title_b": "АНЕКС Тур",
@@ -58,7 +63,6 @@
   "nav.copyright": "Онлайн турагенція - ANEX Tour Україна",
   "nav.privacy_policy": "Політика конфіденційності",
   "blog": "Блог",
-  "blog.read_more": "Читайте також",
   "blog.links": "Всі записи",
   "faq.title": "Питання-відповідь",
   "faq.link_a": "Ще  ",

@@ -4,6 +4,7 @@ import { shimmer, toBase64 } from 'utils/blurImage';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import Link from 'next/link';
+import { FormattedMessage as FM } from 'react-intl';
 import { links } from 'utils/links';
 import 'swiper/css';
 
@@ -11,7 +12,10 @@ export default function TopCountry({ data }) {
   return (
     <div className={styles.topcountry}>
       <h4 className={`${styles.title} container desktop-h2 text-balance`}>
-        <span className="mark-orange">ТОП {data.length}</span> країн цього місяця
+        <span className="mark-orange">
+          <FM id="main.topcountry.title.part1" /> {data.length}{' '}
+        </span>
+        <FM id="main.topcountry.title.part2" />
       </h4>
 
       <Swiper

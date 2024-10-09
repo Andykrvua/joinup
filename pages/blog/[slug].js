@@ -9,16 +9,6 @@ import Carousel from '/components/common/carousel/carousel';
 import { carouselInstance } from '/utils/constants';
 import PostSeoHead from '/components/common/seoHead/postSeoHead.js';
 
-const styles = {
-  marginTop: 'var(--block-title-top-margin)',
-  marginBottom: 'var(--block-top-margin)',
-  fontSize: 'var(--title-fz)',
-  lineHeight: 'var(--title-lh)',
-  fontWeight: 'var(--title-fw)',
-  letterSpacing: 'var(--title-ls)',
-  textTransform: 'var(--title-tt)',
-};
-
 export default function Post({ post, postsList, loc, postsSlugs, slug }) {
   const intl = useIntl();
   const router = useRouter();
@@ -47,10 +37,6 @@ export default function Post({ post, postsList, loc, postsSlugs, slug }) {
         <div className="container">
           <Breadcrumbs data={br_arr} />
           <PostContent post={post} loc={loc} />
-          <h3 style={styles}>
-            <FM id="blog.read_more" />
-          </h3>
-          {postsList.length && <Carousel data={postsList} instance={carouselInstance.blog} />}
         </div>
       )}
     </>
