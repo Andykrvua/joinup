@@ -53,8 +53,8 @@ export default function TopCountry({ data }) {
           },
         }}
         onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
       >
+        {/* onSwiper={(swiper) => console.log(swiper)} */}
         {data.map((item) => (
           <SwiperSlide key={item.code} className={styles.slide}>
             <Link href={`${links.countries}/${item.slug}`}>
